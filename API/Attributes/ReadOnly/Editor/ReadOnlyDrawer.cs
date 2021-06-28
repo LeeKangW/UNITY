@@ -15,7 +15,7 @@ public class ReadOnlyDrawer : PropertyDrawer
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        GUI.enabled = (!Application.isPlaying) && ((ReadOnly)attribute).isRunTimeOnly;
+        GUI.enabled = (!Application.isPlaying) && ((ReadOnlyAttribute)attribute).isRunTimeOnly;
         EditorGUI.PropertyField(position, property, label, true);
         GUI.enabled = true;
     }
