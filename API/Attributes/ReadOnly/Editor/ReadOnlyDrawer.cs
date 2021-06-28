@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(ReadOnly))]
+[CustomPropertyDrawer(typeof(ReadOnly), true)]
 public class ReadOnlyDrawer : PropertyDrawer
 {
     public override bool CanCacheInspectorGUI(SerializedProperty property)
