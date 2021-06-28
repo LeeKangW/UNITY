@@ -4,10 +4,6 @@ using UnityEditor;
 [CustomPropertyDrawer(typeof(ReadOnlyAttribute), true)]
 public class ReadOnlyDrawer : PropertyDrawer
 {
-    public override bool CanCacheInspectorGUI(SerializedProperty property)
-    {
-        return base.CanCacheInspectorGUI(property);
-    }
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         return base.GetPropertyHeight(property, label);
