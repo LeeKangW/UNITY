@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(ReadOnlyAttributes))]
+[CustomPropertyDrawer(typeof(ReadOnly))]
 public class ReadOnlyDrawer : PropertyDrawer
 {
+    public override bool CanCacheInspectorGUI(SerializedProperty property)
+    {
+        return base.CanCacheInspectorGUI(property);
+    }
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         return base.GetPropertyHeight(property, label);
@@ -13,7 +15,7 @@ public class ReadOnlyDrawer : PropertyDrawer
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        GUI.enabled = false;
+        GUI.enabled = (!Application.isPlaying) && ((ReadOnly)attribute).isRunTimeOnly;
         EditorGUI.PropertyField(position, property, label, true);
         GUI.enabled = true;
     }
