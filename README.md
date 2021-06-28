@@ -10,6 +10,7 @@ UNITY_API
 
 #### Attributes
 >* ReadOnly Attributes
+>* Only Positive
 
 #### Editor
 >*
