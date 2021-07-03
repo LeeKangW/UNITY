@@ -7,7 +7,10 @@ public class AnimationController : MonoBehaviour
     [SerializeField]
     Animator animator;
 
+    // 델리게이트는 따로 빼서 사용함이 편함.
+    // AnimTrigger 가 무엇인지 보여주기 위해서 위치만 옮김.
     public delegate void AnimTrigger(int state);
+    
     public AnimTrigger animTriggerCallBack = null;
     public Action animEndCallback = null;
 
